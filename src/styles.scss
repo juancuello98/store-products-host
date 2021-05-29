@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+//body {
+//    margin: 0px;
+//    padding: 0px;
+//}
+// Renderizar los productos en forma de grilla
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); // Con esto decimos como se comporta la grilla, (1,1fr) 1 en 1 fraccion para cuadriculas de 4, si no 4 en 1 fraccion para el responsive
+    //En este caso usamos 1,1 por la tecnica de mobile first
+    grid-gap: 50px 20px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Usamos los mediaqueries para los tamanios de los dispositivos
+@media (min-width: 576px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .container {
+        max-width: 1110px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

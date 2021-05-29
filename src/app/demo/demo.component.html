@@ -1,0 +1,46 @@
+
+<!-- Usando String Interpolation -->
+{{ title }}
+<!-- aca se puede poner instrucciones javascript como 1 + 2 = 3 es es la diferencia con poner por ej <h1> -->
+  <input type="text" [(ngModel)]="power" />
+  {{power | exponential}}
+<!-- Usando databinding -->
+<input type="text" [(ngModel)]="title" />
+<!-- este ngModel hay que importarlo en el app.module.ts desde @angular/forms -->
+<!-- ngModel nos sirve para renderizar una variable y modificarla en nuestro controlador-->
+<div *ngIf="title == 'juan'">
+  <!-- condicional para mostrar o no elementos del html -->
+  Esto es un div
+</div>
+
+<!-- ngFor normalmente en la documentacion se encuentra como ngForOf-->
+<ul>
+  <li *ngFor="let item of items">
+    {{ item }}
+  </li>
+</ul>
+
+<!-- iterar la posicion de los elementos en el array -->
+<ul>
+  <!-- preguntar si la lista esta vacia -->
+  <li *ngIf="items.length === 0">La lista de nombres esta vacia</li>
+  <li *ngFor="let item of items; index as i">
+    {{ item }}{{ i }}
+    <button (click)="DeleteItem(i)">delete</button>
+  </li>
+</ul>
+
+<!-- Agregar un item al array , generamos una accion con los parentesis en este caso es click -->
+<button (click)="addItem()">Add item</button>
+
+<!-- ngFor normalmente en la documentacion se encuentra como ngForOf ,  iterando objetos -->
+
+
+<!-- ngSwitch, controlamos varios if que podemos tener anidados -->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'nicolas'">este es nicolas</p>
+  <p *ngSwitchCase="'juan'">este es juan</p>
+  <p *ngSwitchCase="'camilo'">este es camilo</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
+
